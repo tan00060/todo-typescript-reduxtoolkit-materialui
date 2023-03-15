@@ -1,8 +1,7 @@
-import React, { ChangeEvent, useState } from "react";
-import { addTodoItem } from "../features/todoList/todoListSlice";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import React, { useState } from "react";
+import { addTodoItem } from "../../features/todoList/todoListSlice";
+import { useAppDispatch } from "../../app/hooks";
 import { v4 as uuidv4 } from "uuid";
-import { storeList } from "../utils/storeList";
 import { Button, Stack, TextField } from "@mui/material";
 
 import "./todoListContainer.scss";
@@ -17,8 +16,6 @@ type toDoItem = {
 const TodoListContainer = () => {
   //redux
   const dispatch = useAppDispatch();
-  const todoList = useAppSelector((state) => state.todoList.list);
-
   const [todoItemName, setTodoItemName] = useState<string>("");
 
   const clearFields = () => {

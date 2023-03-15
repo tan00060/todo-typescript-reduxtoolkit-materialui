@@ -1,21 +1,19 @@
 import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { Button, TextField } from "@mui/material";
 
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   finishTodoItem,
   deleteTodoItem,
   updateTodoItem,
-} from "../features/todoList/todoListSlice";
+} from "../../features/todoList/todoListSlice";
 interface toDoItem {
   id: string;
   name: string;
@@ -23,7 +21,7 @@ interface toDoItem {
   dateCreated: string;
 }
 
-const CheckboxList = ({ listItem }: { listItem: toDoItem }) => {
+const ListItemContainer = ({ listItem }: { listItem: toDoItem }) => {
   const todoList = useAppSelector((state) => state.todoList.list);
   const dispatch = useAppDispatch();
 
@@ -140,4 +138,4 @@ const CheckboxList = ({ listItem }: { listItem: toDoItem }) => {
   );
 };
 
-export default CheckboxList;
+export default ListItemContainer;

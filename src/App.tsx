@@ -1,18 +1,11 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import TodoListContainer from "./container/todoListContainer";
-import TodoListItems from "./container/todoListItem";
+import TodoListContainer from "./container/todoListContainer/todoListContainer";
+import TodoListItems from "./container/todoListItem/todoListItem";
 
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { getSessionStorageTodoList } from "./utils/getSessionStorageTodoList";
 import { getTodoList } from "./features/todoList/todoListSlice";
-
-interface todoArray {
-  dateCreated: string;
-  id: string;
-  name: string;
-  status: boolean;
-}
 
 function App() {
   const todoList = useAppSelector((state) => state.todoList.list);
