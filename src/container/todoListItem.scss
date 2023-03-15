@@ -1,0 +1,19 @@
+.listContainer {
+  display: block;
+  width: 60%;
+  //   height: 500px;
+  //   overflow: scroll;
+  margin-top: 1em;
+}
+
+.todoContainer {
+  display: flex;
+  justify-content: space-between;
+  background: grey;
+  margin: 1em;
+}
+
+.buttonContainer {
+  justify-content: center;
+  align-self: center;
+}
